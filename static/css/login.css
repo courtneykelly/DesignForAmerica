@@ -1,0 +1,48 @@
+
+header {
+	padding-bottom: 20px;
+}
+
+body {
+	background: url('../static/image/pink_rice.png');
+}
+
+header h1 {
+	font-family: 'Syncopate', sans-serif;
+  	font-weight: 700;
+  	margin: 0;
+}
+
+ul {
+	font-family: 'Syncopate', sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section li {
+	display: inline;
+	padding: 10px;
+}
+
+label.input {
+	display: block;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+}
+
+input.input {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+}
+
+.well {
+	display: table;
+	width: 40%;
+    margin: 0 auto;
+	text-align: center;
+	border: 2px dotted #000000;
+}

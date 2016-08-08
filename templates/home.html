@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EFR</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-home.css') }}">
+
+    <!-- google fonts link -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Syncopate:700,400' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <header class="container" align="center">
+        <div class="row" >
+            <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
+            <h1 class="col-sm-8"> The Elephant in the Room
+                <small> your mental health resource</small>
+            </h1>
+            <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
+        </div>
+    </header>
+
+    <section class="container" >
+        <div class="row"  align="center" >
+            <nav >
+                <ul class="ul">
+                    <li> <a class="btn-secondary" href="#">Message a UCC Counselor</a> </li>
+                    <li> <a class="btn-secondary" href="#">About</a> </li>
+                    <li> <a class="btn-secondary" href="#">Additional Resources</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row" >
+            <div class="col-md-12">
+                <p> <br> </p>
+            </div>
+        </div>
+    </section>
+
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                {% for post in posts %}
+                    <h2>
+                        <a class="blog-title" href="#"> {{post[1]}} </a>
+                    </h2>
+                    <p class="lead">
+                        Category: <a class="blog-author" href="index.php"> {{post[2]}} </a>
+                    </p>
+                    <p><span class="glyphicon glyphicon-time"></span> Posted on {{post[4]}} </p>
+                    <hr>
+                    <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                    <hr>
+                    <p> {{post[3]}} </p>
+                    <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                    <hr>
+                {% endfor %}
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a class="btn btn-primary" href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a class="btn btn-primary" href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Log-in Well -->
+                <div class="well">
+                    <ul class="list-unstyled" align="center">
+                        <li> <h4> <a class="btn-login" href="/login">Login</a> </h4> </li>
+                        <li> <h4> <a class="btn-login" href="/createAccount">Create an Account</a> </h4> </li>
+                    </ul>
+                </div>
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div >
+                            <ul class="list-unstyled" align="center">
+                                <li> <a class="btn-secondary" href="#">UCC Experience</a> </li>
+                                <li> <a class="btn-secondary" href="#">Concern for Others</a> </li>
+                                <li> <a class="btn-secondary" href="#">Relationships</a> </li>
+                                <li> <a class="btn-secondary" href="#">General</a> </li>
+                                <li> <a class="btn-secondary" href="#">Other</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; University of Notre Dame DFA 2016</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+/*!
+ * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+	padding-top: 2px;
+  	font-family: 'Roboto', sans-serif;
+  	font-weight: 300;
+}
+
+header {
+  	font-family: 'Roboto', sans-serif;
+  	padding: 2px;
+  	padding-top: 20px;
+  	padding-bottom: 10px;
+}
+
+header .row,
+footer .row {
+  	display: flex;
+  	align-items: center;
+}
+
+header h1 {
+	font-family: 'Syncopate', sans-serif;
+  	font-weight: 700;
+  	margin: 0;
+}
+
+ul {
+	font-family: 'Syncopate', sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section li {
+	display: inline;
+	padding: 10px;
+}
+
+.well {
+	text-align: center;
+}
+
+.col-md-6 {
+  	margin: 0 0 30px;
+}
+
+.btn.btn-primary {
+  	border-radius: 2px;
+  	border: 0px;
+  	color: #f5b7b1;
+  	text-shadow: none;
+  	background-color: #ffffff;
+}
+
+.btn.btn-primary:hover {
+  color: #ffffff;
+  background-color: #f5b7b1;
+}
+
+.btn-secondary {
+  color: #f5b7b1;
+}
+
+.btn-secondary:hover {
+	color: #ec786d;
+	text-decoration: underline;
+}
+
+.blog-title {
+	color: #333333;
+}
+
+.blog-title:hover {
+	color: #666666;
+	text-decoration: underline;
+}
+
+.blog-author {
+	color: #7f7f7f;
+}
+
+.blog-author:hover {
+	color: #999999;
+	text-decoration: underline;
+}
+
+.btn-login {
+	color: #333333;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 1200;
+}
+
+.btn-login:hover {
+	color: #666666;
+	text-decoration: underline;
+}
+
+footer {
+  font-size: 12px;
+  padding: 20px 0;
+  margin: 50px 0;
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li img {
+  width: 32px;
+  height: 32px;
+}

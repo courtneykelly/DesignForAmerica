@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Login</title>
+	
+	 <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-home.css') }}">
+
+    <!-- google fonts link -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Syncopate:700,400' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	<header class="container">
+        <h1 align="center"> <br> Login to Your Account <br> </h1>
+	</header>
+
+	<section>
+		<div>
+			<div class="well" align="center" >
+				<form action="login.php" autocomplete="on">
+					<p> 
+				        <label for="username" class="uname" data-icon="u" >Username:</label>
+				        <input id="username" name="username" required="required" type="text" placeholder="Username"/>
+				    </p>
+				    <p> 
+				        <label for="password" class="youpasswd" data-icon="p">Password:</label>
+				        <input id="password" name="password" required="required" type="password" placeholder="Password" /> 
+				    </p>
+				    <p class="keeplogin"> 
+				        <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+				        <label for="loginkeeping">Keep me logged in</label>
+				    </p>
+				    <p class="login button"> 
+				        <input type="submit" value="Login" /> 
+				    </p>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
