@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>Success</title>
 	
 	 <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -19,27 +19,15 @@
 
 <body background="{{url_for('static', filename='images/pink_rice.png')}}">
 	<header class="container">
-        <h1 align="center"> <br> Login to Your Account <br> </h1>
+        <h1 align="center"> <br> Success! <br> </h1>
 	</header>
 
 	<section>
 		<div>
 			<div class="well" align="center" >
-				<form action="" method="post" autocomplete="on">
-					<p> 
-				        <label for="username" class="uname" data-icon="u" >Username:</label>
-				        <input value="{{request.form.username}}" id="username" name="username" required="required" type="text" placeholder="Username"/>
-				    </p>
-				    <p> 
-				        <label value="{{request.form.password}}" for="password" class="youpasswd" data-icon="p">Password:</label>
-				        <input id="password" name="password" required="required" type="password" placeholder="Password" /> 
-				    </p>
-				    <p class="login button"> 
-				        <input type="submit" value="Login" /> 
-				    </p>
+				<form onsubmit="" method="post" autocomplete="on">
+				    <h4> Back to <a href="/">Home Page</a> </h4> 
 				</form>
-
-				<p> Don't have an account? <a href="/createAccount"> Create one! </a> </p>
 
 				{% for message in get_flashed_messages() %}
 					{{ message }}
@@ -48,6 +36,7 @@
 				{% if error %}
 					<p class="error"><strong>Error:</strong> {{ error }} </p>
 				{% endif %}
+				
 			</div>
 		</div>
 	</section>

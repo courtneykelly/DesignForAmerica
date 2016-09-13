@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EFR</title>
+    <title>Other</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -33,25 +33,13 @@
 
     <header class="container" align="center">
         <div class="row" >
-            <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
+            <img class="col-sm-2" src="../static/images/Other.png" >
             <h1 class="col-sm-8"> The Elephant in the Room
-                <small> students fighting the stigma</small>
+                <small> Other </small>
             </h1>
-            <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
+            <img class="col-sm-2" src="../static/images/Other.png" >
         </div>
     </header>
-
-    <section class="container" >
-        <div class="row"  align="center" >
-            <nav >
-                <ul class="ul">
-                    <li> <a class="btn btn-primary" href="#">Message a UCC Counselor</a> </li>
-                    <li> <a class="btn btn-primary" href="#">About</a> </li>
-                    <li> <a class="btn btn-primary" href="#">Additional Resources</a> </li>
-                </ul>
-            </nav>
-        </div>
-    </section>
 
     <section class="container">
         <div class="row" >
@@ -72,7 +60,6 @@
             <div class="col-md-8">
                 {% for post in posts %}
                     <hr>
-                    <img class="col-sm-2" src="../static/images/{{post[2]}}.png" >
                     <h2>
                         <a class="blog-title" href="#"> {{post[1]}} </a>
                     </h2>
@@ -82,9 +69,18 @@
                     <p>
                         <span class="glyphicon glyphicon-time"></span> Posted on {{post[4]}}
                     </p>
-                    <p> &emsp; {{post[3]}} </p>
+                    <p> {{post[3]}} </p>
                     <a class="btn btn-primary" href="#"> Responses <span class="glyphicon glyphicon-chevron-right"></span></a>
-                {% endfor %}                
+                {% endfor %}
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a class="btn btn-primary" href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a class="btn btn-primary" href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
@@ -92,11 +88,10 @@
 
                 <!-- Blog Log-in Well -->
                 <div class="well">
-                    <p> Welcome, {{session['firstname']}}! </p>
-                    {% for message in get_flashed_messages() %}
-                        {{ message }}
-                    {% endfor %}
-                    <p> <br> Click <a href="/logout"> here </a> to logout. </p>
+                    <ul class="list-unstyled" align="center">
+                        <li> <h4> <a class="btn-login" href="/login">Login</a> </h4> </li>
+                        <li> <h4> <a class="btn-login" href="/createAccount">Create an Account</a> </h4> </li>
+                    </ul>
                 </div>
 
                 <!-- Add Blog Post Well -->
@@ -104,25 +99,9 @@
                     <h4> <a class="btn-login" href="/newPost">Add New Post</a> </h4> 
                 </div>
 
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Categories</h4>
-                    <div class="row">
-                        <div >
-                            <ul class="list-unstyled" align="center">
-                                <li> <a class="btn-secondary" href="/UCC Experience">UCC Experience</a> </li>
-                                <li> <a class="btn-secondary" href="/Concern for Others">Concern for Others</a> </li>
-                                <li> <a class="btn-secondary" href="/Relationships">Relationships</a> </li>
-                                <li> <a class="btn-secondary" href="/General">General</a> </li>
-                                <li> <a class="btn-secondary" href="/Other">Other</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Blog Search Well -->
                 <div class="well">
-                    <h4>Post Search</h4>
+                    <h4>Blog Search</h4>
                     <div class="input-group">
                         <input type="text" class="form-control">
                         <span class="input-group-btn">
@@ -132,6 +111,23 @@
                         </span>
                     </div>
                     <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div >
+                            <ul class="list-unstyled" align="center">
+                                <li> <a class="btn-secondary" href="/">Home</a> </li>
+                                <li> <a class="btn-secondary" href="/UCC Experience">UCC Experience</a> </li>
+                                <li> <a class="btn-secondary" href="/Concern for Others">Concern for Others</a> </li>
+                                <li> <a class="btn-secondary" href="/Relationships">Relationships</a> </li>
+                                <li> <a class="btn-secondary" href="/General">General</a> </li>
+                                <li> <a class="btn-secondary" href="/Other">Other</a> </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>

@@ -4,7 +4,7 @@ header {
 }
 
 body {
-	background: url('../static/image/pink_rice.png');
+
 }
 
 header h1 {
@@ -34,15 +34,29 @@ label.input {
 input.input {
 	display: block;
 	margin: 0 auto;
-	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
 }
 
 .well {
 	display: table;
-	width: 40%;
+	width: 50%;
     margin: 0 auto;
 	text-align: center;
 	border: 2px dotted #000000;
+}
+
+.postTitle {
+	width: 300px;
+}
+
+.postBody {
+	height: 250px;
+	width: 500px;
+}
+
+.btn {
+	color: #333333;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 1200;
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EFR</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-home.css') }}">
+
+    <!-- google fonts link -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Syncopate:700,400' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- child template -->
+        {% block content %}{% endblock %}
+
+        <!-- errors -->
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}</p>
+        {% endif %}
+
+        <!-- messages -->
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+
+    </div>
+
+</body>
+
+
+</html>
+

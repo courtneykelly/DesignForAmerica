@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>New Post</title>
+	
+	 <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <!-- google fonts link -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Syncopate:700,400' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body background="{{url_for('static', filename='images/pink_rice.png')}}">
+	<header class="container">
+        <h1 align="center"> <br> Add New Post <br> </h1>
+	</header>
+
+	<section>
+		<div>
+			<div class="well" align="center" >
+				<form onsubmit="" method="post" autocomplete="on">
+					<p> 
+				        <label>Post Title:</label>
+				        <input class="postTitle" id="postTitle" name="postTitle" required="required" type="text"/>
+				    </p>
+				    <p> 
+				        <label>Post Category:</label>
+				        <select id="postCategory" name="postCategory" required="required"> 
+				        	<option value="UCC Experience">UCC Experience</option>
+				        	<option value="Concern for Others">Concern for Others</option>
+				        	<option value="Relationships">Relationships</option>
+				        	<option value="General">General</option>
+				        	<option value="Other">Other</option>
+				        </select>
+				    </p>
+				    <p> 
+				    	<label for="postBody" >Description: <br> </label>
+				        <textarea class="postBody" id="postBody" name="postBody" required="required" type="text"></textarea> 
+				    </p>
+				    <p> 
+				        <input type="submit" value="Publish" /> 
+				    </p>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
