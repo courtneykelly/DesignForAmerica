@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>General</title>
+    <title>Other</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -30,14 +30,14 @@
 </head>
 
 <body>
-
-    <header class="container" align="center">
+    	
+   <header class="container" align="center">
         <div class="row" >
-            <img class="col-sm-2" src="../static/images/General.png" >
-            <h1 class="col-sm-8"> The Elephant in the Room
-                <small> General </small>
+            <img class="col-sm-2" src="../static/images/Other.png" >
+            <h1 class="col-sm-8"> The Elephant in the Room 
+                <small> students fighting the stigma</small>
             </h1>
-            <img class="col-sm-2" src="../static/images/General.png" >
+            <img class="col-sm-2" src="../static/images/Other.png" >
         </div>
     </header>
 
@@ -58,15 +58,14 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-                {% for post in posts %}
                     <hr>
-                    <h2 class="blog-title"> {{post[2]}} </h2>
+                    <h2 class="blog-title"> {{post[0][2]}} </h2>
                     <p>
-                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[5]}}
+                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[0][5]}}
                     </p>
-                    <p> {{post[4]}} </p>
-                    <a class="btn btn-primary" href="#"> Responses <span class="glyphicon glyphicon-chevron-right"></span></a>
-                {% endfor %}
+                    <p> {{post[0][4]}} </p>
+                    <hr>
+                    <h3> Responses <a class="btn btn-primary" href="#"> Click Add Response </a> </h3>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
@@ -123,9 +122,7 @@
         </div>
         <!-- /.row -->
 
-        <hr>
-
-        <!-- Footer -->
+		<!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">

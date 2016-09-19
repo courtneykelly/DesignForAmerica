@@ -72,18 +72,19 @@
             <div class="col-md-8">
                 {% for post in posts %}
                     <hr>
-                    <img class="col-sm-2" src="../static/images/{{post[2]}}.png" >
-                    <h2>
-                        <a class="blog-title" href="#"> {{post[1]}} </a>
-                    </h2>
-                    <p class="lead">
-                        Category: <a class="blog-author" href="index.php"> {{post[2]}} </a>
-                    </p>
+                    <img class="col-sm-2" src="../static/images/{{post[3]}}.png" >
+                    <h2 class="blog-title"> {{post[2]}} </h2>
                     <p>
-                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[4]}}
+                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[5]}}
                     </p>
-                    <p> &emsp; {{post[3]}} </p>
-                    <a class="btn btn-primary" href="#"> Responses <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <p> &emsp; {{post[4]}} </p>
+                    <br>
+                    <a class="btn btn-primary" href="/fullPost/{{ post[0] }}"> Responses <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    {% if session['accounttype'] == "Administrator" %}
+                        <form action="/delete/{{ post[0] }}" method="POST">
+                            <input class="btn btn-primary" type="submit" value="Delete" />
+                        </form>
+                    {% endif %}
                 {% endfor %}                
             </div>
 
@@ -96,6 +97,7 @@
                     {% for message in get_flashed_messages() %}
                         {{ message }}
                     {% endfor %}
+                    <p> <br> View <a href="/yourPosts"> Your Posts </a> </p>
                     <p> <br> Click <a href="/logout"> here </a> to logout. </p>
                 </div>
 

@@ -60,16 +60,11 @@
             <div class="col-md-8">
                 {% for post in posts %}
                     <hr>
-                    <h2>
-                        <a class="blog-title" href="#"> {{post[1]}} </a>
-                    </h2>
-                    <p class="lead">
-                        Category: <a class="blog-author" href="index.php"> {{post[2]}} </a>
-                    </p>
+                    <h2 class="blog-title"> {{post[2]}} </h2>
                     <p>
-                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[4]}}
+                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[5]}}
                     </p>
-                    <p> {{post[3]}} </p>
+                    <p> {{post[4]}} </p>
                     <a class="btn btn-primary" href="#"> Responses <span class="glyphicon glyphicon-chevron-right"></span></a>
                 {% endfor %}
                 <!-- Pager -->
@@ -88,10 +83,12 @@
 
                 <!-- Blog Log-in Well -->
                 <div class="well">
-                    <ul class="list-unstyled" align="center">
-                        <li> <h4> <a class="btn-login" href="/login">Login</a> </h4> </li>
-                        <li> <h4> <a class="btn-login" href="/createAccount">Create an Account</a> </h4> </li>
-                    </ul>
+                    <p> Welcome, {{session['firstname']}}! </p>
+                    {% for message in get_flashed_messages() %}
+                        {{ message }}
+                    {% endfor %}
+                    <p> <br> Back to <a href="/"> Home </a> </p>
+                    <p> <br> Click <a href="/logout"> here </a> to logout. </p>
                 </div>
 
                 <!-- Add Blog Post Well -->

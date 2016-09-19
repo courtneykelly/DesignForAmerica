@@ -1,6 +1,147 @@
-{% extends "base.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Other</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-home.css') }}">
+
+    <!-- google fonts link -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Syncopate:700,400' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
     	
-   
+   <header class="container" align="center">
+        <div class="row" >
+            <img class="col-sm-2" src="../static/images/Other.png" >
+            <h1 class="col-sm-8"> The Elephant in the Room
+                <small> Your Posts </small>
+            </h1>
+            <img class="col-sm-2" src="../static/images/Other.png" >
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="row" >
+            <div class="col-md-12">
+                <p> <br> </p>
+            </div>
+        </div>
+    </section>
+
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+                {% for post in posts %}
+                    <hr>
+                    <h2 class="blog-title"> {{post[2]}} </h2>
+                    <p>
+                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[5]}}
+                    </p>
+                    <p> {{post[4]}} </p>
+                    <a class="btn btn-primary" href="#"> RESPONSES <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <form action="/delete/{{ post[0] }}" method="POST">
+                        <input class="btn btn-primary" type="submit" value="Delete" />
+                    </form>
+                {% endfor %}
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Log-in Well -->
+                <div class="well">
+                    <p> Welcome, {{session['firstname']}}! </p>
+                    {% for message in get_flashed_messages() %}
+                        {{ message }}
+                    {% endfor %}
+                    <p> <br> Back to <a href="/"> Home </a> </p>
+                    <p> <br> Click <a href="/logout"> here </a> to logout. </p>
+                </div>
+
+                <!-- Add Blog Post Well -->
+                <div class="well">
+                    <h4> <a class="btn-login" href="/newPost">Add New Post</a> </h4> 
+                </div>
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div >
+                            <ul class="list-unstyled" align="center">
+                                <li> <a class="btn-secondary" href="/">Home</a> </li>
+                                <li> <a class="btn-secondary" href="/UCC Experience">UCC Experience</a> </li>
+                                <li> <a class="btn-secondary" href="/Concern for Others">Concern for Others</a> </li>
+                                <li> <a class="btn-secondary" href="/Relationships">Relationships</a> </li>
+                                <li> <a class="btn-secondary" href="/General">General</a> </li>
+                                <li> <a class="btn-secondary" href="/Other">Other</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+		<!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; University of Notre Dame DFA 2016</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
 
 {% endblock %}
+
+</body>
+
+</html>

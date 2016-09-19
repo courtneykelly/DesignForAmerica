@@ -160,6 +160,31 @@ def other():
 	except KeyError:
 		return render_template('other.html')
 
+@app.route('/fullPost/<postID>')
+def expandPost(postID):
+	try:
+		post = getPost(postID)
+		return render_template('fullPost.html', post = post)
+	except KeyError:
+		return render_template('fullPost.html')
+
+@app.route('/delete/<postID>', methods=['POST'])
+def delete(postID):
+	try:
+		deletePost(postID)
+		flash('Your post was successfully deleted!')
+		return redirect(url_for('backToHome'))
+	except KeyError:
+		return render_template('yourPosts.html')
+
+@app.route('/yourPosts')
+def yourPosts():
+	try:
+		posts = getUserPosts(session['username'])
+		return render_template('yourPosts.html', posts = posts)
+	except KeyError:
+		return render_template('yourPosts.html')
+
 
 if __name__ == "__main__":
 	app.run()
