@@ -203,6 +203,21 @@ def yourPosts():
 	except KeyError:
 		return render_template('yourPosts.html')
 
+@app.route('/about')
+def about():
+	try:
+		return render_template('about.html')
+	except KeyError:
+		return render_template('about.html')
+
+@app.route('/additionalResources')
+def additionalResources():
+	try:
+		return render_template('additionalResources.html')
+	except KeyError:
+		return render_template('additionalResources.html')
+
+
 
 if __name__ == "__main__":
 	app.run()

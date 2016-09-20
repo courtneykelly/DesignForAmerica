@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EFR</title>
+    <title>About</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -35,23 +35,11 @@
         <div class="row" >
             <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
             <h1 class="col-sm-8"> The Elephant in the Room
-                <small> students fighting the stigma</small>
+                <small> About </small>
             </h1>
             <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
         </div>
     </header>
-
-    <section class="container" >
-        <div class="row"  align="center" >
-            <nav >
-                <ul class="ul">
-                    <li> <a class="btn btn-primary" href="#">Message a UCC Counselor</a> </li>
-                    <li> <a class="btn btn-primary" href="/about">About</a> </li>
-                    <li> <a class="btn btn-primary" href="/additionalResources">Additional Resources</a> </li>
-                </ul>
-            </nav>
-        </div>
-    </section>
 
     <section class="container">
         <div class="row" >
@@ -68,24 +56,9 @@
 
         <div class="row">
 
-            <!-- Blog Entries Column -->
+            <!-- About information -->
             <div class="col-md-8">
-                {% for post in posts %}
-                    <hr>
-                    <img class="col-sm-2" src="../static/images/{{post[3]}}.png" >
-                    <h2 class="blog-title"> {{post[2]}} </h2>
-                    <p>
-                        <span class="glyphicon glyphicon-time"></span> Posted on {{post[5]}}
-                    </p>
-                    <p> &emsp; {{post[4]}} </p>
-                    <br>
-                    <a class="btn btn-primary" href="/fullPost/{{ post[0] }}"> Responses <span class="glyphicon glyphicon-chevron-right"></span></a>
-                    {% if session['accounttype'] == "Administrator" %}
-                        <form action="/delete/{{ post[0] }}" method="POST">
-                            <input class="btn btn-primary" type="submit" value="Delete" />
-                        </form>
-                    {% endif %}
-                {% endfor %}                
+                <p> Elephant in the Room is designed by students for students. We recognized a lack of willingness to discuss mental health issues commonly faced by students, leaving many feeling lonely and isolated. Our aim was to create a safe space for students to ask questions that they are often embarrassed to ask friends or family. We hope this site encourages people to ask questions regarding the many stresses facing students, and most importantly helps them realize that they are far from alone. Let’s talk about the Elephant in the Room. </p>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
@@ -97,7 +70,7 @@
                     {% for message in get_flashed_messages() %}
                         {{ message }}
                     {% endfor %}
-                    <p> <br> View <a href="/yourPosts"> Your Posts </a> </p>
+                    <p> <br> Back to <a href="/"> Home </a> </p>
                     <p> <br> Click <a href="/logout"> here </a> to logout. </p>
                 </div>
 
@@ -106,25 +79,9 @@
                     <h4> <a class="btn-login" href="/newPost">Add New Post</a> </h4> 
                 </div>
 
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Categories</h4>
-                    <div class="row">
-                        <div >
-                            <ul class="list-unstyled" align="center">
-                                <li> <a class="btn-secondary" href="/UCC Experience">UCC Experience</a> </li>
-                                <li> <a class="btn-secondary" href="/Concern for Others">Concern for Others</a> </li>
-                                <li> <a class="btn-secondary" href="/Relationships">Relationships</a> </li>
-                                <li> <a class="btn-secondary" href="/General">General</a> </li>
-                                <li> <a class="btn-secondary" href="/Other">Other</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Blog Search Well -->
                 <div class="well">
-                    <h4>Post Search</h4>
+                    <h4>Blog Search</h4>
                     <div class="input-group">
                         <input type="text" class="form-control">
                         <span class="input-group-btn">
@@ -134,6 +91,23 @@
                         </span>
                     </div>
                     <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div >
+                            <ul class="list-unstyled" align="center">
+                                <li> <a class="btn-secondary" href="/">Home</a> </li>
+                                <li> <a class="btn-secondary" href="/UCC Experience">UCC Experience</a> </li>
+                                <li> <a class="btn-secondary" href="/Concern for Others">Concern for Others</a> </li>
+                                <li> <a class="btn-secondary" href="/Relationships">Relationships</a> </li>
+                                <li> <a class="btn-secondary" href="/General">General</a> </li>
+                                <li> <a class="btn-secondary" href="/Other">Other</a> </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
