@@ -75,19 +75,18 @@
                     <div id="div1"></div>
                     <hr>
                     {% for comment in comments %}
-                            {% if session['accounttype'] == "Administrator" %}
-                                <form action="/deleteComment" method="POST">
-                                    <p class="newResponseField" >
-                                        <input class="btn btn-primary" type="submit" value="Delete" />
-                                        {{comment}}
-                                    </p>
-                                </form>
-                            {% else %}
-                                <p> {{comment}} </p>
-                            {% endif %}
+                        {% if session['accounttype'] == "Administrator" %}
+                            <form action="/deleteComment/{{post[0][0]}}{{comment}}" method="POST">
+                                <p class="newResponseField" >
+                                    <input class="btn btn-primary" type="submit" value="Delete" />
+                                    {{comment}}
+                                </p>
+                            </form>
+                        {% else %}
+                            <p> {{comment}} </p>
+                        {% endif %}
                         <hr>
                     {% endfor %}
-
             </div>
 
             <!-- Blog Sidebar Widgets Column -->

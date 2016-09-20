@@ -177,6 +177,15 @@ def expandPost(postID):
 	except KeyError:
 		return render_template('fullPost.html')
 
+@app.route('/deleteComment/<postID>&<comment>', methods=['POST'])
+def deleteComment(postID, comment):
+	if request.method == 'POST':
+		deleteComment(postID, comment)
+		flash('Your comment was successfully deleted!')
+		return redirect(url_for('backToHome'))
+
+	return redirect(url_for('/fullPost/<postID>'))
+
 @app.route('/delete/<postID>', methods=['POST'])
 def delete(postID):
 	try:
