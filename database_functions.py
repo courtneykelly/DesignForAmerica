@@ -69,6 +69,29 @@ def deletePost(postID):
 		query = 'DELETE FROM posts WHERE PostID = "' + postID + '"'
 		c.execute(query)
 
+def getCommentNum(post):
+	for num in range(6,44):
+		if post[0][num] == None:
+			return num
+
+def getComments(post):
+	comments = []
+	for num in range(6,44):
+		if post[0][num] != None:
+			comments.append(post[0][num])
+	return comments
+
+def addResponse(postID, newResponse):
+	post = getPost(postID)
+	commentID = getCommentNum(post)
+	label = "c" + str(commentID-4)
+
+	conn = lite.connect(database)
+	with conn:
+		c = conn.cursor()
+		c.execute('UPDATE posts SET "' + label + '" = "' + newResponse + '" WHERE PostID = "' + postID + '"')
+
+
 
 
 

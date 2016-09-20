@@ -160,11 +160,20 @@ def other():
 	except KeyError:
 		return render_template('other.html')
 
-@app.route('/fullPost/<postID>')
+@app.route('/fullPost/<postID>', methods=['GET', 'POST'])
 def expandPost(postID):
+	if request.method == 'POST':
+		newResponse = str(request.form['newResponse'])
+		addResponse(postID, newResponse)
+		comments = getComments(getPost(postID))
+		
+		post = getPost(postID)
+		return redirect(url_for('backToHome'))
+
 	try:
 		post = getPost(postID)
-		return render_template('fullPost.html', post = post)
+		comments = getComments(post)
+		return render_template('fullPost.html', post = post, comments = comments)
 	except KeyError:
 		return render_template('fullPost.html')
 

@@ -123,3 +123,12 @@ footer li img {
   width: 32px;
   height: 32px;
 }
+
+.newResponse {
+    height: 50px;
+    width: 600px;
+}
+
+.newResponseField * {
+    vertical-align: middle;
+}

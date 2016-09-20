@@ -65,7 +65,7 @@
                         <span class="glyphicon glyphicon-time"></span> Posted on {{post[5]}}
                     </p>
                     <p> {{post[4]}} </p>
-                    <a class="btn btn-primary" href="#"> RESPONSES <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <a class="btn btn-primary" href="/fullPost/{{ post[0] }}"> Responses <span class="glyphicon glyphicon-chevron-right"></span></a>
                     <form action="/delete/{{ post[0] }}" method="POST">
                         <input class="btn btn-primary" type="submit" value="Delete" />
                     </form>

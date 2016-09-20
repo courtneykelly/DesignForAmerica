@@ -30,10 +30,16 @@
 </head>
 
 <body>
+
+    <script type="text/javascript">
+        function showfield(){
+            document.getElementById('div1').innerHTML='<form method="post" onsubmit=""> <p class="newResponseField"> <textarea class="newResponse" type="text" name="newResponse" name="newResponse"></textarea> <input type="submit" value="Publish"/> </p> </form>';
+        }
+    </script>
     	
    <header class="container" align="center">
         <div class="row" >
-            <img class="col-sm-2" src="../static/images/Other.png" >
+            <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
             <h1 class="col-sm-8"> The Elephant in the Room 
                 <small> students fighting the stigma</small>
             </h1>
@@ -65,7 +71,23 @@
                     </p>
                     <p> {{post[0][4]}} </p>
                     <hr>
-                    <h3> Responses <a class="btn btn-primary" href="#"> Click Add Response </a> </h3>
+                    <h3> Responses <a class="btn btn-primary" onclick="showfield()"> Click Add Response </a> </h3>
+                    <div id="div1"></div>
+                    <hr>
+                    {% for comment in comments %}
+                            {% if session['accounttype'] == "Administrator" %}
+                                <form action="/deleteComment" method="POST">
+                                    <p class="newResponseField" >
+                                        <input class="btn btn-primary" type="submit" value="Delete" />
+                                        {{comment}}
+                                    </p>
+                                </form>
+                            {% else %}
+                                <p> {{comment}} </p>
+                            {% endif %}
+                        <hr>
+                    {% endfor %}
+
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
