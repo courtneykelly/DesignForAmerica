@@ -76,7 +76,7 @@
                     <hr>
                     {% for comment in comments %}
                         {% if session['accounttype'] == "Administrator" %}
-                            <form action="/deleteComment/{{post[0][0]}}{{comment}}" method="POST">
+                            <form action="/deleteComment/{{comment}}" method="POST">
                                 <p class="newResponseField" >
                                     <input class="btn btn-primary" type="submit" value="Delete" />
                                     {{comment}}

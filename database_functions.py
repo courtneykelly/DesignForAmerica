@@ -86,8 +86,6 @@ def getCommentLocation(postID, comment):
 	for num in range(6,44):
 		if post[0][num] == comment:
 			return num
-		else:
-			return 13
 
 def addResponse(postID, newResponse):
 	post = getPost(postID)
@@ -99,17 +97,23 @@ def addResponse(postID, newResponse):
 		c = conn.cursor()
 		c.execute('UPDATE posts SET "' + label + '" = "' + newResponse + '" WHERE PostID = "' + postID + '"')
 
-def deleteComment(postID, comment):
-	print "trying find location"
+def deleteResponse(postID, comment):
+	postID = str(postID)
 	commentLocation = getCommentLocation(postID, comment)
-	print commentLocation
-	label = "c" + str(commentLocation)
-	value = None
+	label = "c" + str(commentLocation-4)
 
 	conn = lite.connect(database)
 	with conn:
 		c = conn.cursor()
-		c.execute('UPDATE posts SET "' + label + '" = "' + value + '" WHERE PostID = "' + postID + '"')
+		c.execute('UPDATE posts SET "' + label + '" = NULL WHERE PostID = "' + postID + '"')
+
+def findPostID(comment):
+	posts = getAllPosts()
+
+	for post in posts:
+		for element in post:
+			if element == comment:
+				return post[0]
 
 
 
