@@ -1,6 +1,21 @@
-
 header {
-	padding-bottom: 20px;
+  	font-family: 'Roboto', sans-serif;
+  	padding: 2px;
+  	padding-top: 20px;
+  	padding-bottom: 10px;
+}
+
+header .row,
+footer .row {
+  	display: flex;
+  	align-items: center;
+}
+
+header h1 {
+	font-family: 'Roboto', sans-serif;
+  	font-weight: 500;
+    font-size: 50px;
+  	margin: 0;
 }
 
 body {
@@ -8,13 +23,13 @@ body {
 }
 
 header h1 {
-	font-family: 'Syncopate', sans-serif;
+	font-family: 'Roboto', sans-serif;
   	font-weight: 700;
   	margin: 0;
 }
 
 ul {
-	font-family: 'Syncopate', sans-serif;
+	font-family: 'Roboto', sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -43,7 +58,6 @@ input.input {
 	width: 50%;
     margin: 0 auto;
 	text-align: center;
-	border: 2px dotted #000000;
 }
 
 .postTitle {
@@ -59,4 +73,11 @@ input.input {
 	color: #333333;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 1200;
+}
+
+footer {
+  font-size: 12px;
+  padding-top: 20px 0;
+  padding-bottom: 10px 0;
+  margin: 50px 0;
 }

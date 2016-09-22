@@ -34,7 +34,7 @@
     <header class="container" align="center">
         <div class="row" >
             <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
-            <h1 class="col-sm-8"> The Elephant in the Room
+            <h1 class="col-sm-8"> The Elephant in the Room <br>
                 <small> students fighting the stigma</small>
             </h1>
             <img class="col-sm-2" src="../static/images/ElephantMainb.jpg" >
@@ -97,8 +97,8 @@
                     {% for message in get_flashed_messages() %}
                         {{ message }}
                     {% endfor %}
-                    <p> <br> View <a href="/yourPosts"> Your Posts </a> </p>
-                    <p> <br> Click <a href="/logout"> here </a> to logout. </p>
+                    <p> <br> View <a class="btn-secondary" href="/yourPosts"> Your Posts </a> </p>
+                    <p> <br> Click <a class="btn-secondary" href="/logout"> here </a> to logout. </p>
                 </div>
 
                 <!-- Add Blog Post Well -->

@@ -24,13 +24,14 @@ footer .row {
 }
 
 header h1 {
-	font-family: 'Syncopate', sans-serif;
-  	font-weight: 700;
+	font-family: 'Roboto', sans-serif;
+  	font-weight: 500;
+    font-size: 55px;
   	margin: 0;
 }
 
 ul {
-	font-family: 'Syncopate', sans-serif;
+    font-family: 'Roboto', sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -72,7 +73,7 @@ img {
 
 .btn-secondary:hover {
 	color: #4e4eb1;
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .blog-title {

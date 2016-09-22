@@ -17,7 +17,7 @@
 
 </head>
 
-<body background="{{url_for('static', filename='images/pink_rice.png')}}">
+<body>
 	<header class="container">
         <h1 align="center"> <br> Success! <br> </h1>
 	</header>
@@ -25,13 +25,14 @@
 	<section>
 		<div>
 			<div class="well" align="center" >
-				<form onsubmit="" method="post" autocomplete="on">
-				    <h4> Back to <a href="/">Home Page</a> </h4> 
-				</form>
 
 				{% for message in get_flashed_messages() %}
 					{{ message }}
 				{% endfor %}
+
+				<form onsubmit="" method="post" autocomplete="on">
+				    <h4> Back to <a href="/">Home Page</a> </h4> 
+				</form>
 				
 				{% if error %}
 					<p class="error"><strong>Error:</strong> {{ error }} </p>
