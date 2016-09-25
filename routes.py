@@ -218,6 +218,13 @@ def additionalResources():
 	except KeyError:
 		return render_template('additionalResources.html')
 
+@app.route('/contactUCC')
+def contactUCC():
+	try:
+		return render_template('contactUCC.html')
+	except KeyError:
+		return render_template('contactUCC.html')
+
 
 
 if __name__ == "__main__":
