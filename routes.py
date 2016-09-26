@@ -24,6 +24,7 @@ def login_required(test):
 def home():
 	try:
 		posts = getAllPosts()
+		posts.reverse()
 		return render_template( 'home.html', posts = posts )
 	except KeyError:
 		print "Error!"
