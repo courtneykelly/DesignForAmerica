@@ -95,7 +95,7 @@ def addResponse(postID, newResponse):
 	conn = lite.connect(database)
 	with conn:
 		c = conn.cursor()
-		c.execute('UPDATE posts SET "' + label + '" = "' + newResponse + '" WHERE PostID = "' + postID + '"')
+		c.execute('UPDATE posts SET "' + label + '" = ? WHERE PostID = "' + postID + '"',(newResponse,))
 
 def deleteResponse(postID, comment):
 	postID = str(postID)

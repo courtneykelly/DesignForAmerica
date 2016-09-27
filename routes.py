@@ -27,7 +27,6 @@ def home():
 		posts.reverse()
 		return render_template( 'home.html', posts = posts )
 	except KeyError:
-		print "Error!"
 		return render_template( 'home.html' )
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -125,6 +124,7 @@ def backToHome():
 def uccExperience():
 	try:
 		posts = getCategoryPosts('UCC Experience')
+		posts.reverse()
 		return render_template('ucc.html', posts = posts)
 	except KeyError:
 		return render_template('ucc.html')
@@ -133,6 +133,7 @@ def uccExperience():
 def concernForOthers():
 	try:
 		posts = getCategoryPosts('Concern for Others')
+		posts.reverse()
 		return render_template('concernForOthers.html', posts = posts)
 	except KeyError:
 		return render_template('concernForOthers.html')
@@ -141,6 +142,7 @@ def concernForOthers():
 def relationships():
 	try:
 		posts = getCategoryPosts('Relationships')
+		posts.reverse()
 		return render_template('relationships.html', posts = posts)
 	except KeyError:
 		return render_template('relationships.html')
@@ -149,6 +151,7 @@ def relationships():
 def general():
 	try:
 		posts = getCategoryPosts('General')
+		posts.reverse()
 		return render_template('general.html', posts = posts)
 	except KeyError:
 		return render_template('general.html')
@@ -157,6 +160,7 @@ def general():
 def other():
 	try:
 		posts = getCategoryPosts('Other')
+		posts.reverse()
 		return render_template('other.html', posts = posts)
 	except KeyError:
 		return render_template('other.html')
@@ -201,6 +205,7 @@ def delete(postID):
 def yourPosts():
 	try:
 		posts = getUserPosts(session['username'])
+		posts.reverse()
 		return render_template('yourPosts.html', posts = posts)
 	except KeyError:
 		return render_template('yourPosts.html')
